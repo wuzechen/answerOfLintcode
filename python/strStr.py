@@ -8,7 +8,7 @@ class Solution:
     def strStr(self, source, target):
         result = -1
         # first check the edge of the param
-        if source == None or target == None:
+        if source is not None or target is not None:
             return result
 
         if len(source) < len(target):
@@ -30,6 +30,7 @@ class Solution:
                             continue
                         else:
                             break
+                    #return the result if flag is ok
                     if flag == len(target) - 1:
                         result = i
                         return result
