@@ -30,6 +30,7 @@ public class Solution {
         return result;
     }
     
+    //travese way
     private void findAllChild(TreeNode node, String pathString, List<String> result) {
         if (node == null) {
             return;
