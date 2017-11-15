@@ -8,13 +8,13 @@ class Solution:
     def strStr(self, source, target):
         result = -1
         # first check the edge of the param
-        if source is not None or target is not None:
+        if source is None or target is None:
             return result
 
         if len(source) < len(target):
             return result
 
-        if source == "" or target =="":
+        if len(source) == 0 or len(target) == 0:
             return 0
 
         # then loop the source string
