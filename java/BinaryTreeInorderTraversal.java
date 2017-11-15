@@ -16,7 +16,7 @@ public class Solution {
      * @param root: A Tree
      * @return: Inorder in ArrayList which contains node values.
      */
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> inorderTraversalDivideConquer(TreeNode root) {
         // write your code here
         if (root == null) {
             return new ArrayList<Integer>();
@@ -32,6 +32,28 @@ public class Solution {
         result.addAll(right);
         
         return result;
+    }
+    
+    // traverse
+    public List<Integer> inorderTraversal(TreeNode root) {
+        // check the edge
+        List<Integer> traverseResult = new ArrayList<Integer>();
+        if (root == null) {
+            return traverseResult;
+        }
+        
+        helper(root, traverseResult);
+        return traverseResult;
+    }
+    
+    private void helper(TreeNode node, List<Integer> traverseResult) {
+        if (node == null) {
+            return;
+        }
+        
+        helper(node.left, traverseResult);
+        traverseResult.add(node.val);
+        helper(node.right, traverseResult);
     }
     
 }
